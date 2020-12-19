@@ -25,6 +25,8 @@ typedef long double ld;
 #define w(t)           int t; cin>>t; while(t--)
 #define nitin          ios_base::sync_with_stdio(false); cin.tie(nullptr)
 #define PI             3.141592653589793238
+#define mem0(x)        memset(x,0,sizeof x)
+#define mem1(x)        memset(x,-1,sizeof x)
 using namespace std;
 
 void solve() {
