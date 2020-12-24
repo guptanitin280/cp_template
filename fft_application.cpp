@@ -11,7 +11,7 @@ vector<int> find(string &a,string &b,char ch1,char ch2) {
     }
     vector<int> ans = multiply(poly1, poly2); //fft
     vector<int> to_return;
-    for (int i = m - 1; i <= n + m - 1; i++)
+    for (int i = m - 1; i <= n - 1; i++)
         to_return.push_back(ans[i]);
     return to_return;
 }
