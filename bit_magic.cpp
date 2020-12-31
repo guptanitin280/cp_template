@@ -6,3 +6,8 @@ do{
 
 //2. remove last bit of a number
  n=n&(n-1); //ex:- 101100 -> 101000
+
+ //3. get the lowest bit
+a) i&-i
+b) i&~(i-1)
+

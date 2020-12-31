@@ -21,7 +21,7 @@ public:
         return parent[i] = par(parent[i]);
     }
 
-    void unite(int a, int b) {
+    bool unite(int a, int b) {
         a = par(a);
         b = par(b);
         if (a != b) {
@@ -32,6 +32,8 @@ public:
             size[a] = 0;
             if (rank[a] == rank[b])
                 rank[b]++;
+            return true;
         }
+        return false;
     }
 };
