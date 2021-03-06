@@ -14,3 +14,13 @@
 /*
  bound on number of divisors is n^(1/3)
  */
+/*
+    set of {floor(n/i)} i from 1 to n can have at max 2*sqrt(n) size
+    and left i be the max value such that floor(n/i)=x
+    then upto j=n/n/(i+1) the value from n/(i+1) to n/j remain same
+ */
+/*
+
+ floor(floor(a,b),c)=floor(a,b*c)
+
+ */
