@@ -1,43 +1,49 @@
-const int N=100001;
-const int M=22;
+const int N=200000;
+const int M = 21;
+int tab[N+1][M+1];
+int L[N+1];
 int a[N];
-int table[N][M];
-int Log[N];
-int n;
-class sparse_table{
-public:
+
+struct st{
     int n;
-    explicit sparse_table(int _n){
+    st(int _n){
         n=_n;
         for(int i=2;i<=n;i++){
-            Log[i]=Log[i/2]+1;
+            L[i]=L[i/2]+1;
         }
     }
-    int f(int left,int right){
-        return gcd(left,right);
+    int f(int x,int y){
+        return max(x,y);
     }
     void build(){
-        for(int i=0;i<n;i++) table[i][0]=a[i];
-        for(int j=1;j<M;j++){
-            for(int i=0;i+(1<<j)<=n;i++){
-                table[i][j]=f(table[i][j-1],table[i+(1<<(j-1))][j-1]);
+        for(int i=0;i<n;i++){
+            tab[i][0]=a[i];
+        }
+        for(int j=1;j<=M;j++){
+            for(int i=0;i<n;i++){
+                if(i+(1<<j)-1<n){
+                    tab[i][j]=f(tab[i][j-1],tab[i+(1<<(j-1))][j-1]);
+                }
             }
         }
     }
-    int query(int l,int r){ //for idempotent
-        int j=Log[r-l+1];
-        return f(table[l][j],table[r-(1<<j)+1][j]);
+    // for non-idempotent function
+    int qry(int l,int r){
+        int len=r-l+1;
+        int idx=l;
+        //initialise it will neutral value
+        int tot=0;
+        for(int j=M;j>=0;j--){
+            if(len&(1ll<<j)){
+                tot=f(tot,tab[idx][j]);
+                idx+=(1<<j);
+            }
+        }
+        return tot;
     }
-//    int query(int l,int r){
-//        int val=0;
-//        for(int i=M-1;i>=0;i--){
-//            if((1<<i)<=(r-l+1))
-//            {
-//                val=f(val,table[l][i]);
-//                l+=(1<<i);
-//            }
-//        }
-//        return val;
-//    }
-
+    // for idempotent function
+    int qry_i(int l,int r){
+        int lg=L[r-l+1];
+        return f(tab[l][lg],tab[r-(1<<lg)+1][lg]);
+    }
 };
