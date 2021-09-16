@@ -2,12 +2,12 @@ struct sd{
     vector<int>a,bv,bno,bl,br;
     int n,bsz,bcnt;
 
-    sd(int _n){
+    sd(int _n,vector<int>&_a){
         n=_n;
         bsz=sqrt(n);
         bcnt=(n+bsz-1)/bsz;
 
-        a.resize(n,0);
+        a=_a;
         bno.resize(n,0);
 
         bl.resize(bcnt,-1);
@@ -18,6 +18,8 @@ struct sd{
             bno[i]=i/bsz;
             if(bl[bno[i]]==-1) bl[bno[i]]=i;
             br[bno[i]]=i;
+
+            bv[bno[i]]+=a[i];
         }
     }
 
