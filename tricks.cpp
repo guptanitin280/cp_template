@@ -24,3 +24,10 @@
  floor(floor(a,b),c)=floor(a,b*c)
 
  */
+
+/*
+constraints can be solved by building constraints graph
+called cow-game
+eg:- https://atcoder.jp/contests/abc216/tasks/abc216_g
+resource:- https://www.cs.huji.ac.il/course/2002/dast/slides/BellmanFord.pdf
+*/
