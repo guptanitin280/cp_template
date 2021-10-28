@@ -1,5 +1,5 @@
-const int N=100001;
-const int M=18;
+const int N=200001;
+const int M=21;
 int par[N][M];
 int n;
 vector<pair<int,int>>g[N];
@@ -56,9 +56,6 @@ bool cmp(int a,int b){
 bool anc(int x,int y){
     return tin[x]<=tin[y] && tout[x]>=tout[y];
 }
-int distance(int x,int y){
-    return dist[x]+dist[y]-2*dist[lca(x,y)];
-}
 void create_ag(vector<int>&v){
     sort(v.begin(),v.end(),cmp);
     int k=v.size();
@@ -74,9 +71,8 @@ void create_ag(vector<int>&v){
     s.push(v[0]);
     for(int i=1;i<v.size();i++){
         while(!anc(s.top(),v[i])) s.pop();
-        int d=distance(s.top(),v[i]);
-        ag[v[i]].emplace_back(s.top(),d);
-        ag[s.top()].emplace_back(v[i],d);
+        ag[v[i]].emplace_back(s.top(),dist[v[i]]-dist[s.top()]);
+        ag[s.top()].emplace_back(v[i],dist[v[i]]-dist[s.top()]);
         s.push(v[i]);
     }
 }
