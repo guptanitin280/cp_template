@@ -1,15 +1,13 @@
 struct node{
-    //req variable
-    int sum;
-    //default value
+    int val;
     node()
     {
-        sum=0;
+        val=0;
     }
 };
 class segte {
 public:
-    int n{};
+    int n;
     vector<node> tree;
     vector<int> a;
     node neutral;
@@ -19,6 +17,7 @@ public:
         tree.resize(4 * n + 1);
         //default values
         a.assign(n, 0);
+        neutral.val=0;
     }
 
     void put(vector<int> &val) {
@@ -27,12 +26,12 @@ public:
 
     //merge function
     void merge(node &curr, node &left, node &right) {
-        curr.sum = left.sum + right.sum;
+        curr.val = left.val + right.val;
     }
 
     //for leaf
     void single(node &curr, int idx) {
-        curr.sum = a[idx];
+        curr.val = a[idx];
     }
 
     void build(int index, int ss, int se) {
@@ -78,7 +77,8 @@ public:
         merge(tree[index], tree[2 * index], tree[2 * index + 1]);
     }
 
-    void update(int idx) {
+    void update(int idx,int delta) {
+        a[idx]=delta;
         update(1, idx, 0, n - 1);
     }
 };
