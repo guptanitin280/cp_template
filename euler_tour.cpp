@@ -53,3 +53,22 @@ void eut_3(int node,int p){
     }
     tout[node]=tme;
 }
+// in eut_2 we can make opening and closing array different to support subtree update and path query
+// subtree of x is in ord0-> [tin0[x],tout0[x]], in ord1-> [tin1[x],tout1[x]]
+// path of root to x in ord0-> [0,tin0[x]], in ord1-> [0,tin1[x]-1]
+int tin0[N],tout0[N],tin1[N],tout1[N];
+int tme0=-1,tme1=-1;
+vector<int>ord0,ord1;
+void eut_4(int node,int p){
+    tin0[node]=++tme0;
+    ord0.push_back(node);
+    tin1[node]=tme1+1;
+    for(auto &c:v[node]){
+        if(c!=p){
+            eut_4(c,node);
+        }
+    }
+    tout0[node]=tme0;
+    tout1[node]=++tme1;
+    ord1.push_back(node);
+}
