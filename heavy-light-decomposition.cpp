@@ -1,4 +1,4 @@
-// one-base hld
+// one-base hld (? hot lady decomposition ) 
 const int N=200005;
 vector<int>g[N];
 segte s(N); //ds
