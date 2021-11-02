@@ -1,4 +1,5 @@
 // one-base hld (? hot lady decomposition ) 
+// https://codeforces.com/blog/entry/53170
 const int N=200005;
 vector<int>g[N];
 segte s(N); //ds
