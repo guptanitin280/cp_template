@@ -10,6 +10,7 @@ int gcd(int a,int b,int &x,int &y) {
     y = x1 - (a / b) * y1;
     return d;
 }
+// gcd(a,m) should be 1
 bool modi(int a,int m,int &ai) {
     int x, y;
     int g = gcd(a, m, x, y);
