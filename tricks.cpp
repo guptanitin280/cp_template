@@ -31,3 +31,7 @@ called cow-game
 eg:- https://atcoder.jp/contests/abc216/tasks/abc216_g
 resource:- https://www.cs.huji.ac.il/course/2002/dast/slides/BellmanFord.pdf
 */
+
+/*
+if x*y is prefect square then there reduced form ( in which only prime are considered whose power is odd) is equal.
+*/
