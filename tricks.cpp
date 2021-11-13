@@ -35,3 +35,8 @@ resource:- https://www.cs.huji.ac.il/course/2002/dast/slides/BellmanFord.pdf
 /*
 if x*y is prefect square then there reduced form ( in which only prime are considered whose power is odd) is equal.
 */
+
+/*
+floor(x/i) where i=[1,x] take only at max 2*sqrt(x) different values, because for i=[1,sqrt(x)] -> only sqrt(x) different value, i=[sqrt(x)+1,x], this implies
+n/i<=sqrt(x) again sqrt(x) value.
+*/
