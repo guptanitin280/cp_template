@@ -40,3 +40,7 @@ if x*y is prefect square then there reduced form ( in which only prime are consi
 floor(x/i) where i=[1,x] take only at max 2*sqrt(x) different values, because for i=[1,sqrt(x)] -> only sqrt(x) different value, i=[sqrt(x)+1,x], this implies
 n/i<=sqrt(x) again sqrt(x) value.
 */
+
+/*
+the max j for which n/j=n/i is equal to n/(n/i)
+*/
