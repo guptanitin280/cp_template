@@ -12,3 +12,18 @@ void sieve() {
         }
     }
 }
+
+// O(n)
+const int N=200001;
+int d[N];
+vector<int>p;
+void sieve(){
+    for(int i=1;i<N;i++) d[i]=i;
+    for(int i=2;i<N;i++){
+        if(d[i]==i) p.push_back(i);
+        for(auto &c:p){
+            if(c>d[i] || i*c>=N) break;
+            d[i*c]=c;
+        }
+    }
+}
