@@ -11,6 +11,7 @@ int gcd(int a,int b,int &x,int &y) {
     return d;
 }
 // gcd(a,m) should be 1
+// solution of ax+my=1 as (ax)%m=(1)%m
 bool modi(int a,int m,int &ai) {
     int x, y;
     int g = gcd(a, m, x, y);
