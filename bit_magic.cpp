@@ -10,4 +10,8 @@ do{
  //3. get the lowest bit
 a) i&-i
 b) i&~(i-1)
+	
+//4. add
+a + b − (a xor b) = 2 × (a and b)
+a + b ≥ a xor b
 
