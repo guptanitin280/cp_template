@@ -5,6 +5,8 @@ the one who cant move lose
 Losing state:- x=0
 Winning state:- x!=0
   
+  
+  
 // Sprauge Grundy Theorm
 Piles are:- p1,p2,p3...pn
 the one who cant move lose
