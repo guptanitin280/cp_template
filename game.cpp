@@ -7,6 +7,7 @@ Winning state:- x!=0
   
 // Grundy Theorm
 Piles are:- p1,p2,p3...pn
+the one who cant move lose
 Move on Pi go to k number of state:-
 1. {Pi11,pi12...,}
 2. {Pi21, Pi22, ... }
