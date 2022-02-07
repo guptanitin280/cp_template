@@ -67,3 +67,75 @@ int32_t main() {
         solve();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//https://cses.fi/problemset/task/2220/
+#include <bits/stdc++.h>
+#define int long long
+typedef long double ld;
+
+#define endl           "\n"
+#define all(x)         x.begin(), x.end()
+#define sz(x)          (int)(x).size()
+#define nitin          ios_base::sync_with_stdio(false); cin.tie(nullptr)
+
+using namespace std;
+
+
+int dp[20][11][2][2][2];
+int solve(string &a,string &b,int i,bool bigA,bool smallB,bool start,int lastDig) {
+    if (i == a.length()) {
+        return 1;
+    }
+    int &ans = dp[i][lastDig+1][bigA][smallB][start];
+    if (~ans)
+        return ans;
+
+    ans = 0;
+    int l = 0, r = 9;
+    if (!bigA) l = (a[i] - '0');
+    if (!smallB) r = (b[i] - '0');
+    for (int j = l; j <= r; j++) {
+        if (j == lastDig) continue;
+        bool n_bigA = bigA | (j > l);
+        bool n_smallB = smallB | (j < r);
+        bool n_start = (start | (j != 0));
+        int n_lastDig = j;
+        if (!n_start) n_lastDig = -1;
+        ans += solve(a, b, i + 1, n_bigA, n_smallB, n_start, n_lastDig);
+    }
+    return ans;
+}
+int solve(int x,int y) {
+    string a = to_string(x);
+    string b = to_string(y);
+    reverse(all(a));
+    while (sz(a) < sz(b)) {
+        a += '0';
+    }
+    reverse(all(a));
+    memset(dp, -1, sizeof dp);
+    return solve(a, b, 0, false, false, false, -1);
+}
+void solve() {
+    int x,y;
+    cin>>x>>y;
+    cout<<solve(x,y)<<endl;
+}
+
+int32_t main() {
+    nitin;
+    solve();
+}
