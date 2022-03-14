@@ -22,7 +22,8 @@
 /*
 
  floor(floor(a,b),c)=floor(a,b*c)
-
+ ceil(ceil(a,b),c)=ceil(a,b*c)
+ 
  */
 
 /*
