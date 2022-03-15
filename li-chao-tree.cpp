@@ -1,3 +1,5 @@
+// https://cses.fi/problemset/task/2085/
+// li chao tree, its like generalised CHT
 struct line {
     int m, c;
 
