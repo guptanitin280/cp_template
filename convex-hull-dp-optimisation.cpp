@@ -42,7 +42,7 @@ struct cht {
         else
             dq.push_back({l, l.intersection(dq.back().first)});
     }
-    // query asked in decreasing order
+    // query asked in increasing order
     int query(int x) {
         while (dq.size() > 1 && dq[0].first.get_val(x) >= dq[1].first.get_val(x))
             dq.pop_front();
