@@ -149,3 +149,35 @@ public:
 
     // we can store complete subarray that a segment [l,r] cover, it will be O(nlogn) memory only
 };
+
+
+/*******************************************************************************************************************************************************************/
+
+
+// calculate the count of non zero element in whole array, and supports inc,dec in a range [l,r]
+const int N=1000000;
+int add[4*N];
+int tot[4*N];
+
+void correct(int i,int s,int e) {
+    if (add[i] > 0) tot[i] = (e - s + 1);
+    else if (s == e) tot[i] = 0;
+    else tot[i] = tot[2 * i] + tot[2 * i + 1];
+}
+void upd(int i,int s,int e,int l,int r,int inc) {
+    if (r < s || l > e) return;
+    if (s >= l && e <= r) {
+        add[i] += inc;
+        correct(i, s, e);
+        return;
+    }
+    int m = (s + e) / 2;
+    upd(2 * i, s, m, l, r, inc);
+    upd(2 * i + 1, m + 1, e, l, r, inc);
+    correct(i, s, e);
+}
+int qry() {
+    return tot[1];
+}
+
+
