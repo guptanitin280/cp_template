@@ -45,3 +45,7 @@ n/i<=sqrt(x) again sqrt(x) value.
 /*
 the max j for which n/j=n/i is equal to n/(n/i)
 */
+
+/*
+if X>=Y then (X/2)>=X%Y
+*/
