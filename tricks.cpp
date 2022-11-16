@@ -34,6 +34,12 @@ resource:- https://www.cs.huji.ac.il/course/2002/dast/slides/BellmanFord.pdf
 */
 
 /*
+a⋅b≤c→a≤⌊c/b⌋ is correct
+a⋅b<c→a<⌊c/b⌋ is incorrect
+a⋅b≥c→a≥⌊c/b⌋ is correct
+a⋅b>c→a>⌊c/b⌋ is correct
+/*
+
 if x*y is prefect square then there reduced form ( in which only prime are considered whose power is odd) is equal.
 */
 
