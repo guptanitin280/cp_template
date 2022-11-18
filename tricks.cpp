@@ -60,3 +60,7 @@ if X>=Y then (X/2)>=X%Y
 For a problem, there can be a subproblem in which you are asked to compare two array/string,( and we can do some operation on strigns)so check if they belong to same equivalence classes, means if their any 
 form (like lexicographically smallest) are same then we can convert both of these in each other.
 */
+
+/*
+diagonals of a parallelogram split each other in the middle
+*/
