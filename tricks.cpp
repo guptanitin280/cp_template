@@ -68,3 +68,7 @@ diagonals of a parallelogram split each other in the middle
 /*
 phi[n] is prime only for 3,4,6
 */
+
+/*
+every digit 0-9 repeat after 4th power in %10.
+*/
