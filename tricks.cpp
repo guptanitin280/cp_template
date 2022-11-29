@@ -64,3 +64,7 @@ form (like lexicographically smallest) are same then we can convert both of thes
 /*
 diagonals of a parallelogram split each other in the middle
 */
+
+/*
+phi[n] is prime only for 3,4,6
+*/
