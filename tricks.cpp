@@ -34,12 +34,6 @@ resource:- https://www.cs.huji.ac.il/course/2002/dast/slides/BellmanFord.pdf
 */
 
 /*
-a⋅b≤c→a≤⌊c/b⌋ is correct
-a⋅b<c→a<⌊c/b⌋ is incorrect
-a⋅b≥c→a≥⌊c/b⌋ is correct
-a⋅b>c→a>⌊c/b⌋ is correct
-/*
-
 if x*y is prefect square then there reduced form ( in which only prime are considered whose power is odd) is equal.
 */
 
@@ -53,22 +47,14 @@ the max j for which n/j=n/i is equal to n/(n/i)
 */
 
 /*
-if X>=Y then (X/2)>=X%Y
+it is possible to take out a basis of elements having only k bits popcount among 0...((1<<n)-1) 
+*/
+/*
+every 1500 consecutive number till 2^64 contains atleast one prime number
 */
 
 /*
-For a problem, there can be a subproblem in which you are asked to compare two array/string,( and we can do some operation on strigns)so check if they belong to same equivalence classes, means if their any 
-form (like lexicographically smallest) are same then we can convert both of these in each other.
-*/
-
-/*
-diagonals of a parallelogram split each other in the middle
-*/
-
-/*
-phi[n] is prime only for 3,4,6
-*/
-
-/*
-every digit 0-9 repeat after 4th power in %10.
+sometimes we are asked the possible number of values, and sometimes
+ it turns out that everything is possible between minimum value and maximum
+  values so answer will be maximum-minimum 
 */
