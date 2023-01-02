@@ -19,7 +19,7 @@ public:
     int par(int i) {
         if (i == parent[i])
             return i;
-        return parent[i] = par(parent[i]);
+        return par(parent[i]);
     }
 
     void unite(int a, int b) {
