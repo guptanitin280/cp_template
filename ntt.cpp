@@ -68,7 +68,7 @@ vector<int> multiply(vector<int> a, vector<int> b) {
     fft(a, false);
     fft(b, false);
     for (int i = 0; i < n; i++) {
-        (a[i] = 1LL * a[i] * b[i]) %= mod;
+        a[i] = (1LL * a[i] * b[i]) %= mod;
     }
     fft(a, true);
     return a;
