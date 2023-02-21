@@ -52,9 +52,9 @@ void fft(vector<int> & a, bool invert) {
     }
  
     if (invert) {
-        int n_1 = modi(n, mod);
+        int n_rev = modi(n, mod);
         for (int &x: a)
-            x = (int) (1LL * x * n_1 % mod);
+            x = (int) (1LL * x * n_rev % mod);
     }
 }
  
@@ -68,7 +68,7 @@ vector<int> multiply(vector<int> a, vector<int> b) {
     fft(a, false);
     fft(b, false);
     for (int i = 0; i < n; i++) {
-        (a[i] *= b[i]) %= mod;
+        (a[i] = 1LL * a[i] * b[i]) %= mod;
     }
     fft(a, true);
     return a;
